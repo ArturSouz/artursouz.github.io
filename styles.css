@@ -1,0 +1,153 @@
+/* styles.css */
+/* Variáveis de tema */
+:root {
+  --primary: #1a73e8;
+  --background: #ffffff;
+  --text: #333333;
+  --muted: #666666;
+  --accent: #f4f4f4;
+  --radius: 8px;
+  --transition: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--background);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+.btn:hover {
+  background: darken(var(--primary), 10%);
+}
+
+.section {
+  padding: 3rem 2rem;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.timeline {
+  display: grid;
+  gap: 2rem;
+}
+
+.timeline-item time {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.skills-list,
+.contact-list {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: var(--accent);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav ul {
+    flex-direction: column;
+    background: var(--background);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 1rem 2rem;
+  }
+  .nav.open ul {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
