@@ -5,20 +5,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Currículo | Artur Alves Souza Silva</title>
-  <meta name="description" content="Currículo de Artur Alves Souza Silva - Desenvolvedor Pleno e DevOps Freelancer com experiência em .NET, TypeScript, SQL, Python e AWS." />
+  <meta name="description" id="metaDescription" content="Currículo de Artur Alves Souza Silva - Desenvolvedor Pleno e DevOps Freelancer com experiência em .NET, TypeScript, SQL, Python e AWS." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <!-- JSON-LD para SEO -->
-  <script type="application/ld+json">
+  <script id="jsonLdPerson" type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Artur Alves Souza Silva",
     "jobTitle": "Desenvolvedor Pleno e DevOps Freelancer",
-    "telephone": "+55 (31) 99880-0631",
-    "email": "artur.alves00@icloud.com",
+    "telephone": "+55 (32) 99851-2325",
+    "email": "arturalvessouzasilva@icloud.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Rio Doce",
@@ -33,14 +33,22 @@
 <body>
   <header class="header">
     <a href="#home" class="logo">Artur Alves</a>
-    <button class="nav-toggle" aria-label="Abrir menu">☰</button>
+    <div class="header-actions">
+      <select id="languageSelect" class="language-select" aria-label="Selecionar idioma">
+        <option value="pt-BR">PT</option>
+        <option value="en">EN</option>
+      </select>
+
+      <button class="nav-toggle" data-i18n="nav.openMenu" data-i18n-attr="aria-label" aria-label="Abrir menu">☰</button>
+    </div>
     <nav class="nav">
       <ul>
-        <li><a href="#about">Perfil</a></li>
-        <li><a href="#experience">Experiência</a></li>
-        <li><a href="#skills">Aptidões</a></li>
-        <li><a href="#education">Educação</a></li>
-        <li><a href="#contact">Contato</a></li>
+        <li><a href="#about"><span data-i18n="nav.about">Perfil</span></a></li>
+        <li><a href="#experience"><span data-i18n="nav.experience">Experiência</span></a></li>
+        <li><a href="#skills"><span data-i18n="nav.skills">Aptidões</span></a></li>
+        <li><a href="#projects"><span data-i18n="nav.projects">Projetos</span></a></li>
+        <li><a href="#education"><span data-i18n="nav.education">Educação</span></a></li>
+        <li><a href="#contact"><span data-i18n="nav.contact">Contato</span></a></li>
       </ul>
     </nav>
   </header>
@@ -48,64 +56,84 @@
   <main>
     <section id="home" class="hero">
       <h1>Artur Alves Souza Silva</h1>
-      <p>Desenvolvedor Pleno & DevOps Freelancer</p>
-      <a href="#contact" class="btn">Entrar em Contato</a>
+      <p data-i18n="hero.subtitle">Desenvolvedor Pleno & DevOps Freelancer</p>
+      <a href="#contact" class="btn" data-i18n="hero.cta">Entrar em Contato</a>
     </section>
 
     <section id="about" class="section">
-      <h2>Perfil</h2>
-      <p>
-        Estudo e me envolvo com Computação desde minha adolescência, participando de eventos e campeonatos de programação. Fui bolsista de iniciação científica, fiz intercâmbio e sempre busco aprender novos assuntos técnicos e psicológicos.
+      <h2 data-i18n="about.heading">Perfil</h2>
+      <p data-i18n="about.p1">
+        Estudo e me envolvo com computação desde a adolescência. Estou sempre lendo e aprendendo novos assuntos. Participei de eventos e campeonatos de programação; desenvolvi e colaborei na organização de eventos durante o meu período na universidade; auxiliei e ensinei tópicos a amigos, colegas e calouros; trabalhei em uma iniciação científica e acompanhei o desenvolvimento de outras pesquisas; também fiz intercâmbio durante o período de um ano da graduação.
       </p>
-      <p>
-        Proativo, com comunicação efetiva, documentando processos, detectando oportunidades de melhoria e garantindo a entrega de valor em ambientes ágeis (Kanban, Scrum).
+      <p data-i18n="about.p2">
+        Pratico comunicação efetiva e sou bastante proativo na finalização de demandas, além de detectar novas oportunidades de melhoria nos fluxos de produção de valor. Gosto de aprender assuntos técnicos e psicológicos. Sempre que posso, estou lendo, assistindo, praticando e aprimorando meus conhecimentos.
       </p>
     </section>
 
     <section id="experience" class="section">
-      <h2>Experiência</h2>
+      <h2 data-i18n="experience.heading">Experiência</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <time>2022 – Atual</time>
-          <h3>Desenvolvedor Pleno</h3>
-          <p>Atuação em times de larga escala usando .NET, VB, TypeScript, SQL, C#, Python. Desenvolvimento de telas, endpoints, integração, code review, refatoração e performance.</p>
+          <time data-i18n="experience.mid.time">2022 – Atual</time>
+          <h3 data-i18n="experience.mid.title">Desenvolvedor Pleno</h3>
+          <p data-i18n="experience.mid.desc">
+            Atuei em diferentes times, onde aprendi a diversificar meus conhecimentos para acompanhar o ambiente de desenvolvimento de uma empresa de grande escala, uma das maiores do segmento no país. Os times utilizavam Kanban, Scrum e auto-gerenciamento. As ferramentas mais utilizadas foram .NET, VB, TypeScript, SQL, TortoiseGit/GitLab, Jira, Visual Studio e Insomnia; também empregamos outras tecnologias, como C#, Python e Notion. Desenvolvi telas e endpoints, além de soluções de integração entre sistemas; atualizei ambientes de testes e de produção, validando builds e deployments; realizei code review de branches, garantindo qualidade e aderência às boas práticas; apresentei e defendi alterações em comitês de mudança; e refatorei código para otimizar performance e ajustar tipagens de variáveis e classes, entregando informações de forma mais clara e eficiente ao front-end.
+          </p>
         </div>
         <div class="timeline-item">
-          <time>2024 – Atual</time>
-          <h3>DevOps Freelancer</h3>
-          <p>Desenvolvimento e administração de sistema para restaurante (Raspberry Pi 5, Nest, Next, Flask, Python). Consultoria de eficiência de processos.</p>
+          <time data-i18n="experience.devops1.time">2024 – Atual</time>
+          <h3 data-i18n="experience.devops1.title">DevOps Freelancer</h3>
+          <p data-i18n="experience.devops1.desc">
+            Desenvolvo, mantenho e administro um sistema para restaurantes, utilizado em um pesque-pague que recebe, em média, 700 pessoas por final de semana. Utilizo Nest.js, Next.js, Flask e Python em um Raspberry Pi 5 local. O sistema oferece cardápio, fluxo de pedidos, fluxo de caixa, quadro Kanban e outras ferramentas. Também auxilio com consultoria em eficiência de processos, desenvolvimento e informatização do estabelecimento.
+          </p>
         </div>
         <div class="timeline-item">
-          <time>2019 – 2022</time>
-          <h3>DevOps Freelancer</h3>
-          <p>Criação de sistemas do zero: modelagem de dados, desenvolvimento, testes e deploy na AWS. Documentação e refatoração para performance.</p>
+          <time data-i18n="experience.devops2.time">2019 – 2022</time>
+          <h3 data-i18n="experience.devops2.title">DevOps Freelancer</h3>
+          <p data-i18n="experience.devops2.desc">
+            Utilizando plataformas para encontrar projetos, desenvolvi diversos sistemas para pessoas e empresas. Após entender as necessidades dos clientes, delimitamos juntos as funcionalidades e o esforço necessário. Dessa forma, criei soluções do zero, desenhei a estrutura do banco de dados, escrevi o código, realizei testes e efetuei o deploy na AWS. Refatorei a codificação e propus mudanças nos sistemas para melhorar a performance. Todo o processo foi documentado para facilitar a adaptação de novos desenvolvedores após a conclusão do projeto.
+          </p>
         </div>
       </div>
     </section>
 
     <section id="skills" class="section">
-      <h2>Aptidões</h2>
-      <ul class="skills-list">
-        <li>Sistema de Rota de Compra</li>
-        <li>Crawler de preços com criação de rota de compras</li>
-        <li>Django, MySQL e AWS</li>
-        <li>IA para Classificação de Raio-X (TensorFlow, Scikit-learn)</li>
-        <li>Sistema de Votação em Blockchain</li>
-      </ul>
+      <h2 data-i18n="skills.heading">Aptidões</h2>
+      <p data-i18n="skills.intro">
+        Consigo utilizar e aprender ferramentas de desenvolvimento com facilidade, incluindo mas não se limitando a novas linguagens, frameworks e ambientes de trabalho. Já utilizei as linguagens: C, C++, C#, VB, Java, Python, PHP, Javascript, SQL, HTML e CSS. Tive contato com outras e não possuo dificuldade em aprender e utilizar.
+      </p>
+
+      <h3 class="subheading" data-i18n="skills.improvedHeading">Melhorei as seguintes habilidades</h3>
+      <ul class="skills-list" id="skills-improved-list"></ul>
+
+      <h3 class="subheading" data-i18n="skills.highlightsHeading">Destaques</h3>
+      <ul class="skills-list" id="skills-highlights-list"></ul>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 data-i18n="projects.heading">Projetos</h2>
+      <ul class="skills-list" id="projects-list"></ul>
     </section>
 
     <section id="education" class="section">
-      <h2>Educação</h2>
-      <p><strong>Universidade Federal Rural do Rio de Janeiro</strong><br/>Ciência da Computação, 2013–2018</p>
-      <p><strong>CCAA</strong><br/>Inglês Avançado</p>
+      <h2 data-i18n="education.heading">Educação</h2>
+      <p>
+        <strong data-i18n="education.school">Universidade Federal Rural do Rio de Janeiro</strong><br/>
+        <span data-i18n="education.degree">Ciência da Computação — Graduação</span><br/>
+        <span data-i18n="education.period">2013–2018</span>
+      </p>
+      <p>
+        <strong data-i18n="education.langSchool">CCAA</strong><br/>
+        <span data-i18n="education.langLevel">Inglês Avançado</span>
+      </p>
     </section>
 
     <section id="contact" class="section">
-      <h2>Contato</h2>
+      <h2 data-i18n="contact.heading">Contato</h2>
       <ul class="contact-list">
-        <li>📞 +55 (31) 99880-0631</li>
-        <li>✉️ <a href="mailto:artur.alves00@icloud.com">artur.alves00@icloud.com</a></li>
-        <li>📍 Rio Doce – MG, 35442-000</li>
+        <li>📞 <span id="phoneText" data-i18n="contact.phone">+55 (32) 99851-2325</span></li>
+        <li>✉️ <a id="emailLink" href="mailto:arturalvessouzasilva@icloud.com" data-i18n="contact.email">arturalvessouzasilva@icloud.com</a></li>
+        <li>📍 <span id="addressText" data-i18n="contact.address">Rio Doce - MG - 35442-000</span></li>
       </ul>
     </section>
   </main>
