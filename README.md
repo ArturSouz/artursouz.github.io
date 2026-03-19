@@ -21,11 +21,11 @@
 ## Visão Geral
 Este repositório contém um site simples para apresentar seu currículo de forma legível e objetiva.
 
-O conteúdo exibido é alinhado aos PDFs exportados do Pages (na pasta do projeto):
+O conteúdo pode ser conferido nos arquivos **`cv pt.md`** e **`cv eng.md`** na pasta do projeto. As seções **Projetos** (PT e EN) estão como **listas estáticas no `index.html`**; o `script.js` só alterna qual lista fica visível ao trocar o idioma.
+
+Referência adicional (PDFs exportados do Pages):
 - `CV - Artur DEVELOPER 2025.pdf` (Português)
 - `CV - Artur DEVELOPER 2025 - ENGLISH.pdf` (English)
-
-Os arquivos `.pages` são a fonte editável no Apple Pages; o site segue o texto dos PDFs (export “congelado”).
 
 O objetivo é manter o site leve, rápido e 100% estático, permitindo atualizar o currículo facilmente trocando as informações que alimentam o HTML/JS.
 

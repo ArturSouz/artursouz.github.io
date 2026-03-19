@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0c0c0f" />
   <title>Currículo | Artur Alves Souza Silva</title>
   <meta name="description" id="metaDescription" content="Currículo de Artur Alves Souza Silva - Desenvolvedor Pleno e DevOps Freelancer com experiência em .NET, TypeScript, SQL, Python e AWS." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <!-- JSON-LD para SEO -->
   <script id="jsonLdPerson" type="application/ld+json">
@@ -31,10 +32,11 @@
   </script>
 </head>
 <body>
-  <header class="header">
+  <a class="skip-link" href="#main"><span data-i18n="skip.toContent">Pular para o conteúdo</span></a>
+  <header class="header" id="site-header">
     <a href="#home" class="logo">Artur Alves</a>
     <div class="header-actions">
-      <select id="languageSelect" class="language-select" aria-label="Selecionar idioma">
+      <select id="languageSelect" class="language-select" data-i18n="languageSelect.aria" data-i18n-attr="aria-label" aria-label="Selecionar idioma">
         <option value="pt-BR">PT</option>
         <option value="en">EN</option>
       </select>
@@ -53,11 +55,19 @@
     </nav>
   </header>
 
-  <main>
-    <section id="home" class="hero">
-      <h1>Artur Alves Souza Silva</h1>
-      <p data-i18n="hero.subtitle">Desenvolvedor Pleno & DevOps Freelancer</p>
-      <a href="#contact" class="btn" data-i18n="hero.cta">Entrar em Contato</a>
+  <main id="main">
+    <div class="main-inner">
+    <section id="home" class="hero" data-i18n="hero.sectionAria" data-i18n-attr="aria-label" aria-label="Introdução">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Currículo &amp; portfólio</p>
+        <h1>Artur Alves Souza Silva</h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">Desenvolvedor Pleno &amp; DevOps Freelancer</p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn" data-i18n="hero.cta">Entrar em Contato</a>
+        </div>
+        <span class="hero__line" aria-hidden="true"></span>
+      </div>
     </section>
 
     <section id="about" class="section">
@@ -66,19 +76,34 @@
         Estudo e me envolvo com computação desde a adolescência. Estou sempre lendo e aprendendo novos assuntos. Participei de eventos e campeonatos de programação; desenvolvi e colaborei na organização de eventos durante o meu período na universidade; auxiliei e ensinei tópicos a amigos, colegas e calouros; trabalhei em uma iniciação científica e acompanhei o desenvolvimento de outras pesquisas; também fiz intercâmbio durante o período de um ano da graduação.
       </p>
       <p data-i18n="about.p2">
-        Pratico comunicação efetiva e sou bastante proativo na finalização de demandas, além de detectar novas oportunidades de melhoria nos fluxos de produção de valor. Gosto de aprender assuntos técnicos e psicológicos. Sempre que posso, estou lendo, assistindo, praticando e aprimorando meus conhecimentos.
+        Pratico comunicação efetiva e sou bastante proativo na finalização de demandas, além de detectar novas oportunidades de melhoria nos fluxos de produção de valor.
+      </p>
+      <p data-i18n="about.p3">
+        Gosto de aprender assuntos técnicos e psicológicos. Sempre que posso, estou lendo, assistindo, praticando e aprimorando meus conhecimentos.
       </p>
     </section>
 
     <section id="experience" class="section">
       <h2 data-i18n="experience.heading">Experiência</h2>
       <div class="timeline">
-        <div class="timeline-item">
-          <time data-i18n="experience.mid.time">2022 – atualmente</time>
+        <div class="timeline-item timeline-item--pleno">
+          <time data-i18n="experience.mid.time">2022 - ATUALMENTE</time>
           <h3 data-i18n="experience.mid.title">Desenvolvedor Pleno</h3>
-          <p data-i18n="experience.mid.desc">
-            Atuei em diferentes times, onde aprendi a diversificar meus conhecimentos para acompanhar o ambiente de desenvolvimento de uma empresa de grande escala, uma das maiores do segmento no país. Os times utilizavam Kanban, Scrum e auto-gerenciamento. As ferramentas mais utilizadas foram .NET, VB, TypeScript, SQL, TortoiseGit/GitLab, Jira, Visual Studio e Insomnia; também empregamos outras tecnologias, como C#, Python e Notion. Desenvolvi telas e endpoints, além de soluções de integração entre sistemas; atualizei ambientes de testes e de produção, validando builds e deployments; realizei code review de branches, garantindo qualidade e aderência às boas práticas; apresentei e defendi alterações em comitês de mudança; e refatorei código para otimizar performance e ajustar tipagens de variáveis e classes, entregando informações de forma mais clara e eficiente ao front-end.
+          <p data-i18n="experience.mid.p1">
+            Atuei em diferentes times, onde aprendi a diversificar meus conhecimentos para acompanhar o ambiente de desenvolvimento de uma empresa de grande escala, uma das maiores do segmento no país.
           </p>
+          <p data-i18n="experience.mid.p2">
+            Os times utilizavam Kanban, Scrum e auto-gerenciamento. As ferramentas mais utilizadas foram .NET, VB, TypeScript, SQL, TortoiseGit/GitLab, Jira, Visual Studio e Insomnia; também empregamos outras tecnologias, como C#, Python e Notion.
+          </p>
+          <p data-i18n="experience.mid.p3">
+            Desenvolvi telas e endpoints, além de soluções de integração entre sistemas; atualizei ambientes de testes e de produção, validando builds e deployments; realizei code review de branches, garantindo qualidade e aderência às boas práticas; apresentei e defendi alterações em comitês de mudança; e refatorei código para otimizar performance e ajustar tipagens de variáveis e classes, entregando informações de forma mais clara e eficiente ao front-end.
+          </p>
+
+          <h4 class="subheading subheading--inline" data-i18n="skills.improvedHeading">Melhorei as seguintes habilidades</h4>
+          <ul class="skills-list skills-list--experience" id="skills-improved-list"></ul>
+
+          <h4 class="subheading subheading--inline" data-i18n="skills.highlightsHeading">Destaques</h4>
+          <ul class="skills-list skills-list--experience" id="skills-highlights-list"></ul>
         </div>
         <div class="timeline-item">
           <time data-i18n="experience.devops1.time">2024 – 2025</time>
@@ -90,8 +115,11 @@
         <div class="timeline-item">
           <time data-i18n="experience.devops2.time">2019 – 2022</time>
           <h3 data-i18n="experience.devops2.title">DevOps, Freelancer</h3>
-          <p data-i18n="experience.devops2.desc">
-            Utilizando plataformas para encontrar projetos, desenvolvi diversos sistemas para pessoas e empresas. Após entender as necessidades dos clientes, delimitamos juntos as funcionalidades e o esforço necessário. Dessa forma, criei soluções do zero, desenhei a estrutura do banco de dados, escrevi o código, realizei testes e efetuei o deploy na AWS. Refatorei a codificação e propus mudanças nos sistemas para melhorar a performance. Todo o processo foi documentado para facilitar a adaptação de novos desenvolvedores após a conclusão do projeto.
+          <p data-i18n="experience.devops2.p1">
+            Utilizando plataformas para encontrar projetos, desenvolvi diversos sistemas para pessoas e empresas. Após entender as necessidades dos clientes, delimitamos juntos as funcionalidades e o esforço necessário. Dessa forma, criei soluções do zero, desenhei a estrutura do banco de dados, escrevi o código, realizei testes e efetuei o deploy na AWS. Refatorei a codificação e propus mudanças nos sistemas para melhorar a performance.
+          </p>
+          <p data-i18n="experience.devops2.p2">
+            Todo o processo foi documentado para facilitar a adaptação de novos desenvolvedores após a conclusão do projeto.
           </p>
         </div>
       </div>
@@ -99,21 +127,77 @@
 
     <section id="skills" class="section">
       <h2 data-i18n="skills.heading">Aptidões</h2>
-      <p data-i18n="skills.intro">
-        Consigo utilizar e aprender ferramentas de desenvolvimento com facilidade, incluindo mas não se limitando a novas linguagens, frameworks e ambientes de trabalho. Já utilizei as linguagens: C, C++, C#, VB, Java, Python, PHP, Javascript, SQL, HTML e CSS. Tive contato com outras e não possuo dificuldade em aprender e utilizar.
+      <p data-i18n="skills.intro1">
+        Consigo utilizar e aprender ferramentas de desenvolvimento com facilidade, incluindo mas não se limitando a novas Linguagens, Frameworks e Ambientes de trabalho.
+      </p>
+      <p data-i18n="skills.intro2">
+        Já utilizei as linguagens: C, C++, C#, VB, Java, Python, PHP, Javascript, SQL, HTML e CSS. Tive contato com outras e não possuo dificuldade em aprender e utilizar.
       </p>
       <p data-i18n="skills.tagline" class="skills-tagline">Proatividade e autodidata.</p>
-
-      <h3 class="subheading" data-i18n="skills.improvedHeading">Melhorei as seguintes habilidades</h3>
-      <ul class="skills-list" id="skills-improved-list"></ul>
-
-      <h3 class="subheading" data-i18n="skills.highlightsHeading">Destaques</h3>
-      <ul class="skills-list" id="skills-highlights-list"></ul>
     </section>
 
     <section id="projects" class="section">
-      <h2 data-i18n="projects.heading">Projetos</h2>
-      <ul class="skills-list" id="projects-list"></ul>
+      <h2 data-i18n="projects.heading">Projetos - Estudos e Aprendizado</h2>
+      <!-- PT: cv pt.md | EN: cv eng.md — listas estáticas; JS só alterna qual fica visível. -->
+      <ul class="skills-list" id="projects-list-pt" aria-label="Projetos em português">
+        <li class="project-item">
+          <strong>Sistema para conectar prestadores de serviço com organizadores de evento (organizeeventos.com)</strong>
+          <div class="project-link-wrap">
+            <a href="https://organizeeventos.com" target="_blank" rel="noopener noreferrer">organizeeventos.com</a>
+          </div>
+          <div class="project-meta">Typescript, Nextjs e Cloudflare</div>
+        </li>
+        <li class="project-item">
+          <strong>Sistema de Assinatura Digital</strong>
+          <div class="project-meta">Django, MySQL e AWS</div>
+        </li>
+        <li class="project-item">
+          <strong>Sistema de Rota de Compra</strong>
+          <div class="project-desc">Crawler para adquirir os valores dos produtos. Sistema que cria uma rota baseada na lista de compra do usuário</div>
+          <div class="project-meta">Django, MySQL e AWS</div>
+        </li>
+        <li class="project-item">
+          <strong>LLM para Classificação de Raio-X</strong>
+          <div class="project-desc">Classificando entre Covid, Pneumonia e Normal</div>
+          <div class="project-meta">Python, TensorFlow, Scikit-learn, Django, MySQL e AWS</div>
+        </li>
+        <li class="project-item">
+          <strong>Sistema de Votação</strong>
+          <div class="project-desc">Utilizando Blockchain</div>
+          <div class="project-meta">Python</div>
+        </li>
+      </ul>
+      <ul class="skills-list" id="projects-list-en" aria-label="Projects in English" hidden>
+        <li class="project-item">
+          <strong>Platform to connect service providers with event organizers (organizeeventos.com)</strong>
+          <div class="project-link-wrap">
+            <a href="https://organizeeventos.com" target="_blank" rel="noopener noreferrer">organizeeventos.com</a>
+          </div>
+          <div class="project-meta">TypeScript, Next.js, Cloudflare</div>
+        </li>
+        <li class="project-item">
+          <strong>Digital Signature System</strong>
+          <div class="project-meta">Django, MySQL, AWS</div>
+        </li>
+        <li class="project-item">
+          <strong>Shopping Route System</strong>
+          <div class="project-desc">Web crawler to fetch product prices; builds a route based on the user’s shopping list</div>
+          <div class="project-meta">Django, MySQL, AWS</div>
+        </li>
+        <li class="project-item">
+          <strong>X-ray Classification LLM</strong>
+          <div class="project-desc">Classifying COVID, Pneumonia, and Normal</div>
+          <div class="project-meta">Python, TensorFlow, Scikit-learn, Django, MySQL, AWS</div>
+        </li>
+        <li class="project-item">
+          <strong>Voting System</strong>
+          <div class="project-desc">Using Blockchain</div>
+          <div class="project-meta">Python</div>
+        </li>
+      </ul>
+      <noscript>
+        <p class="noscript-note">Com JavaScript desativado, só a lista em português aparece. Ative o JS para alternar para inglês.</p>
+      </noscript>
     </section>
 
     <section id="education" class="section">
@@ -121,7 +205,7 @@
       <p>
         <strong data-i18n="education.school">Universidade Federal Rural do Rio de Janeiro</strong><br/>
         <span data-i18n="education.degree">Ciência da Computação — Graduação</span><br/>
-        <span data-i18n="education.period">2013–2018</span>
+        <span data-i18n="education.period">2013-2018</span>
       </p>
       <p>
         <strong data-i18n="education.langSchool">CCAA</strong><br/>
@@ -137,10 +221,11 @@
         <li>📍 <span id="addressText" data-i18n="contact.address">Rio Doce - MG - 35442-000</span></li>
       </ul>
     </section>
+    </div>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 Artur Alves Souza Silva</p>
+    <p>&copy; 2026 Artur Alves Souza Silva</p>
   </footer>
 
   <script src="script.js"></script>

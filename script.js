@@ -1,4 +1,6 @@
 // script.js
+document.documentElement.classList.add('js');
+
 // Toggle menu mobile
 const nav = document.querySelector('.nav');
 const toggle = document.querySelector('.nav-toggle');
@@ -32,7 +34,8 @@ const jsonLdPerson = document.getElementById('jsonLdPerson');
 
 const skillsImprovedList = document.getElementById('skills-improved-list');
 const skillsHighlightsList = document.getElementById('skills-highlights-list');
-const projectsList = document.getElementById('projects-list');
+const projectsListPt = document.getElementById('projects-list-pt');
+const projectsListEn = document.getElementById('projects-list-en');
 
 const translations = {
   'pt-BR': {
@@ -48,6 +51,10 @@ const translations = {
     'nav.education': 'Educação',
     'nav.contact': 'Contato',
 
+    'skip.toContent': 'Pular para o conteúdo',
+    'languageSelect.aria': 'Selecionar idioma',
+    'hero.sectionAria': 'Introdução',
+    'hero.eyebrow': 'Currículo & portfólio',
     'hero.subtitle': 'Desenvolvedor Pleno & DevOps Freelancer',
     'hero.cta': 'Entrar em Contato',
 
@@ -55,13 +62,19 @@ const translations = {
     'about.p1':
       'Estudo e me envolvo com computação desde a adolescência. Estou sempre lendo e aprendendo novos assuntos. Participei de eventos e campeonatos de programação; desenvolvi e colaborei na organização de eventos durante o meu período na universidade; auxiliei e ensinei tópicos a amigos, colegas e calouros; trabalhei em uma iniciação científica e acompanhei o desenvolvimento de outras pesquisas; também fiz intercâmbio durante o período de um ano da graduação.',
     'about.p2':
-      'Pratico comunicação efetiva e sou bastante proativo na finalização de demandas, além de detectar novas oportunidades de melhoria nos fluxos de produção de valor. Gosto de aprender assuntos técnicos e psicológicos. Sempre que posso, estou lendo, assistindo, praticando e aprimorando meus conhecimentos.',
+      'Pratico comunicação efetiva e sou bastante proativo na finalização de demandas, além de detectar novas oportunidades de melhoria nos fluxos de produção de valor.',
+    'about.p3':
+      'Gosto de aprender assuntos técnicos e psicológicos. Sempre que posso, estou lendo, assistindo, praticando e aprimorando meus conhecimentos.',
 
     'experience.heading': 'Experiência',
-    'experience.mid.time': '2022 – atualmente',
+    'experience.mid.time': '2022 - ATUALMENTE',
     'experience.mid.title': 'Desenvolvedor Pleno',
-    'experience.mid.desc':
-      'Atuei em diferentes times, onde aprendi a diversificar meus conhecimentos para acompanhar o ambiente de desenvolvimento de uma empresa de grande escala, uma das maiores do segmento no país. Os times utilizavam Kanban, Scrum e auto-gerenciamento. As ferramentas mais utilizadas foram .NET, VB, TypeScript, SQL, TortoiseGit/GitLab, Jira, Visual Studio e Insomnia; também empregamos outras tecnologias, como C#, Python e Notion. Desenvolvi telas e endpoints, além de soluções de integração entre sistemas; atualizei ambientes de testes e de produção, validando builds e deployments; realizei code review de branches, garantindo qualidade e aderência às boas práticas; apresentei e defendi alterações em comitês de mudança; e refatorei código para otimizar performance e ajustar tipagens de variáveis e classes, entregando informações de forma mais clara e eficiente ao front-end.',
+    'experience.mid.p1':
+      'Atuei em diferentes times, onde aprendi a diversificar meus conhecimentos para acompanhar o ambiente de desenvolvimento de uma empresa de grande escala, uma das maiores do segmento no país.',
+    'experience.mid.p2':
+      'Os times utilizavam Kanban, Scrum e auto-gerenciamento. As ferramentas mais utilizadas foram .NET, VB, TypeScript, SQL, TortoiseGit/GitLab, Jira, Visual Studio e Insomnia; também empregamos outras tecnologias, como C#, Python e Notion.',
+    'experience.mid.p3':
+      'Desenvolvi telas e endpoints, além de soluções de integração entre sistemas; atualizei ambientes de testes e de produção, validando builds e deployments; realizei code review de branches, garantindo qualidade e aderência às boas práticas; apresentei e defendi alterações em comitês de mudança; e refatorei código para otimizar performance e ajustar tipagens de variáveis e classes, entregando informações de forma mais clara e eficiente ao front-end.',
 
     'experience.devops1.time': '2024 – 2025',
     'experience.devops1.title': 'DevOps, Freelancer',
@@ -70,22 +83,26 @@ const translations = {
 
     'experience.devops2.time': '2019 – 2022',
     'experience.devops2.title': 'DevOps, Freelancer',
-    'experience.devops2.desc':
-      'Utilizando plataformas para encontrar projetos, desenvolvi diversos sistemas para pessoas e empresas. Após entender as necessidades dos clientes, delimitamos juntos as funcionalidades e o esforço necessário. Dessa forma, criei soluções do zero, desenhei a estrutura do banco de dados, escrevi o código, realizei testes e efetuei o deploy na AWS. Refatorei a codificação e propus mudanças nos sistemas para melhorar a performance. Todo o processo foi documentado para facilitar a adaptação de novos desenvolvedores após a conclusão do projeto.',
+    'experience.devops2.p1':
+      'Utilizando plataformas para encontrar projetos, desenvolvi diversos sistemas para pessoas e empresas. Após entender as necessidades dos clientes, delimitamos juntos as funcionalidades e o esforço necessário. Dessa forma, criei soluções do zero, desenhei a estrutura do banco de dados, escrevi o código, realizei testes e efetuei o deploy na AWS. Refatorei a codificação e propus mudanças nos sistemas para melhorar a performance.',
+    'experience.devops2.p2':
+      'Todo o processo foi documentado para facilitar a adaptação de novos desenvolvedores após a conclusão do projeto.',
 
     'skills.heading': 'Aptidões',
-    'skills.intro':
-      'Consigo utilizar e aprender ferramentas de desenvolvimento com facilidade, incluindo mas não se limitando a novas Linguagens, Frameworks e Ambientes de trabalho. Já utilizei as linguagens: C, C++, C#, VB, Java, Python, PHP, Javascript, SQL, HTML e CSS. Tive contato com outras e não possuo dificuldade em aprender e utilizar.',
+    'skills.intro1':
+      'Consigo utilizar e aprender ferramentas de desenvolvimento com facilidade, incluindo mas não se limitando a novas Linguagens, Frameworks e Ambientes de trabalho.',
+    'skills.intro2':
+      'Já utilizei as linguagens: C, C++, C#, VB, Java, Python, PHP, Javascript, SQL, HTML e CSS. Tive contato com outras e não possuo dificuldade em aprender e utilizar.',
     'skills.tagline': 'Proatividade e autodidata.',
     'skills.improvedHeading': 'Melhorei as seguintes habilidades',
     'skills.highlightsHeading': 'Destaques',
 
-    'projects.heading': 'Projetos — Estudos e Aprendizado',
+    'projects.heading': 'Projetos - Estudos e Aprendizado',
 
     'education.heading': 'Educação',
     'education.school': 'Universidade Federal Rural do Rio de Janeiro',
     'education.degree': 'Ciência da Computação — Graduação',
-    'education.period': '2013–2018',
+    'education.period': '2013-2018',
     'education.langSchool': 'CCAA',
     'education.langLevel': 'Inglês Avançado',
 
@@ -109,8 +126,8 @@ const translations = {
       'Propor planos de ação e soluções antes e durante o desenvolvimento',
       'Documentar o desenvolvimento e os testes',
       'GIT',
-      'Comunicação clara e eficaz (escrita e verbal)',
-      'Capacidade de trabalhar e colaborar em equipe',
+      'Comunicação clara e eficaz, tanto escrita quanto verbal',
+      'Capacidade de trabalhar em equipe e colaborar com colegas',
       'Resolver problemas e pensar fora da caixa',
       'Flexibilidade e adaptabilidade a mudanças',
       'Gestão de tempo e organização'
@@ -120,26 +137,6 @@ const translations = {
       'Planejamento e desenvolvimento de grandes funcionalidades',
       'Refatoração de código legado com redução de 60% a 70% do tempo de execução',
       'Cuidar, melhorar, desenvolver novas versões, acompanhamento de logs, entre outras atividades da principal API do SuperApp'
-    ],
-
-    projects: [
-      {
-        title: 'Sistema para conectar prestadores de serviço com organizadores de evento (organizeeventos.com)',
-        url: 'https://organizeeventos.com',
-        tech: 'TypeScript, Next.js e Cloudflare'
-      },
-      { title: 'Sistema de Assinatura Digital', tech: 'Django, MySQL e AWS' },
-      {
-        title: 'Sistema de Rota de Compra',
-        desc: 'Crawler para adquirir os valores dos produtos. Sistema que cria uma rota baseada na lista de compra do usuário.',
-        tech: 'Django, MySQL e AWS'
-      },
-      {
-        title: 'LLM para Classificação de Raio-X',
-        desc: 'Classificando entre Covid, Pneumonia e Normal',
-        tech: 'Python, TensorFlow, Scikit-learn, Django, MySQL e AWS'
-      },
-      { title: 'Sistema de Votação', desc: 'Utilizando Blockchain', tech: 'Python' }
     ]
   },
 
@@ -156,6 +153,10 @@ const translations = {
     'nav.education': 'Education',
     'nav.contact': 'Contact',
 
+    'skip.toContent': 'Skip to content',
+    'languageSelect.aria': 'Select language',
+    'hero.sectionAria': 'Introduction',
+    'hero.eyebrow': 'Résumé & portfolio',
     'hero.subtitle': 'Mid-level Software Developer & DevOps Freelancer',
     'hero.cta': 'Get in Touch',
 
@@ -163,27 +164,37 @@ const translations = {
     'about.p1':
       'I have studied and been involved with computing since my teenage years. I’m always reading and learning new subjects. I participated in programming events and competitions; developed and helped organize events during my time at university; assisted and taught topics to friends, classmates, and freshmen; worked on a scientific initiation project and followed the development of other research; I also did a one-year exchange program during my undergraduate studies.',
     'about.p2':
-      'I practice effective communication and am highly proactive in completing deliverables, as well as identifying new opportunities to improve value-delivery workflows. I enjoy learning both technical and psychological subjects. Whenever possible, I’m reading, watching, practicing, and sharpening my knowledge.',
+      'I practice effective communication and am highly proactive in completing deliverables, as well as identifying new opportunities to improve value-delivery workflows.',
+    'about.p3':
+      'I enjoy learning both technical and psychological subjects. Whenever possible, I’m reading, watching, practicing, and sharpening my knowledge.',
 
     'experience.heading': 'Experience',
     'experience.mid.time': '2022–Present',
     'experience.mid.title': 'Mid-level Software Developer',
-    'experience.mid.desc':
-      'I worked on different teams, where I learned to diversify my skill set to keep up with the development environment of a large-scale company—one of the biggest in its segment in the country. Teams used Kanban, Scrum, and self-management. The main tools were .NET, VB, TypeScript, SQL, TortoiseGit/GitLab, Jira, Visual Studio, and Insomnia; we also used other technologies such as C#, Python, and Notion. I developed UIs and endpoints, as well as integration solutions between systems; updated test and production environments, validating builds and deployments; performed code reviews of branches, ensuring quality and adherence to best practices; presented and defended changes in change committees; and refactored code to optimize performance and adjust variable and class typings, delivering information more clearly and efficiently to the front end.',
+    'experience.mid.p1':
+      'I worked on different teams, where I learned to diversify my skill set to keep up with the development environment of a large-scale company—one of the biggest in its segment in the country.',
+    'experience.mid.p2':
+      'Teams used Kanban, Scrum, and self-management. The main tools were .NET, VB, TypeScript, SQL, TortoiseGit/GitLab, Jira, Visual Studio, and Insomnia; we also used other technologies such as C#, Python, and Notion.',
+    'experience.mid.p3':
+      'I developed UIs and endpoints, as well as integration solutions between systems; updated test and production environments, validating builds and deployments; performed code reviews of branches, ensuring quality and adherence to best practices; presented and defended changes in change committees; and refactored code to optimize performance and adjust variable and class typings, delivering information more clearly and efficiently to the front end.',
 
     'experience.devops1.time': '2024–2025',
     'experience.devops1.title': 'DevOps, Freelancer',
     'experience.devops1.desc':
       'Development, monitoring, and administration of a system for restaurants, used at a “pesque-pague” venue that receives an average of 700 people per weekend. Built with Nest.js, Next.js, Flask, and Python on a local Raspberry Pi 5. The system offers a menu, order flow, cash flow, a Kanban board, and other tools. I also provided consulting on process efficiency, development, and digitization of the establishment.',
 
-    'experience.devops2.time': '2019 - 2022',
+    'experience.devops2.time': '2019–2022',
     'experience.devops2.title': 'DevOps, Freelancer',
-    'experience.devops2.desc':
-      'Using platforms to find projects, I developed several systems for people and companies. After understanding client needs, we defined the features and effort together. I created solutions from scratch, designed the database structure, wrote the code, performed tests, and deployed to AWS. I refactored code and proposed system changes to improve performance. The entire process was documented to facilitate onboarding of new developers after project hand-off.',
+    'experience.devops2.p1':
+      'Using platforms to find projects, I developed several systems for people and companies. After understanding client needs, we defined the features and effort together. I created solutions from scratch, designed the database structure, wrote the code, performed tests, and deployed to AWS. I refactored code and proposed system changes to improve performance.',
+    'experience.devops2.p2':
+      'The entire process was documented to facilitate onboarding of new developers after project hand-off.',
 
     'skills.heading': 'Skills',
-    'skills.intro':
-      'I can quickly use and learn development tools, including—but not limited to—new languages, frameworks, and work environments. Languages used: C, C++, C#, VB, Java, Python, PHP, JavaScript, SQL, HTML, and CSS. I’ve had contact with others and have no difficulty learning and using them.',
+    'skills.intro1':
+      'I can quickly use and learn development tools, including—but not limited to—new languages, frameworks, and work environments.',
+    'skills.intro2':
+      'Languages used: C, C++, C#, VB, Java, Python, PHP, JavaScript, SQL, HTML, and CSS. I’ve had contact with others and have no difficulty learning and using them.',
     'skills.tagline': 'Proactive and self-taught.',
     'skills.improvedHeading': 'Improved skills',
     'skills.highlightsHeading': 'Highlights',
@@ -228,26 +239,6 @@ const translations = {
       'Planning and development of major features',
       'Legacy code refactoring with a 60–70% reduction in execution time',
       'Maintaining, improving, releasing new versions, and monitoring logs—among other activities—of the SuperApp’s main API'
-    ],
-
-    projects: [
-      {
-        title: 'Platform to connect service providers with event organizers (organizeeventos.com)',
-        url: 'https://organizeeventos.com',
-        tech: 'TypeScript, Next.js, Cloudflare'
-      },
-      { title: 'Digital Signature System', tech: 'Django, MySQL, AWS' },
-      {
-        title: 'Shopping Route System',
-        desc: 'Web crawler to fetch product prices; builds a route based on the user’s shopping list',
-        tech: 'Django, MySQL, AWS'
-      },
-      {
-        title: 'X-ray Classification LLM',
-        desc: 'Classifying COVID, Pneumonia, and Normal',
-        tech: 'Python, TensorFlow, Scikit-learn, Django, MySQL, AWS'
-      },
-      { title: 'Voting System', desc: 'Using Blockchain', tech: 'Python' }
     ]
   }
 };
@@ -258,48 +249,6 @@ function renderBullets(ul, items) {
   items.forEach(text => {
     const li = document.createElement('li');
     li.textContent = text;
-    ul.appendChild(li);
-  });
-}
-
-function renderProjects(ul, projects) {
-  if (!ul) return;
-  ul.innerHTML = '';
-
-  projects.forEach(p => {
-    const li = document.createElement('li');
-    li.className = 'project-item';
-
-    const title = document.createElement('strong');
-    title.textContent = p.title;
-    li.appendChild(title);
-
-    if (p.url) {
-      const linkWrap = document.createElement('div');
-      linkWrap.className = 'project-link-wrap';
-      const a = document.createElement('a');
-      a.href = p.url;
-      a.textContent = p.url.replace(/^https?:\/\//i, '');
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      linkWrap.appendChild(a);
-      li.appendChild(linkWrap);
-    }
-
-    if (p.desc) {
-      const desc = document.createElement('div');
-      desc.className = 'project-desc';
-      desc.textContent = p.desc;
-      li.appendChild(desc);
-    }
-
-    if (p.tech) {
-      const tech = document.createElement('div');
-      tech.className = 'project-meta';
-      tech.textContent = p.tech;
-      li.appendChild(tech);
-    }
-
     ul.appendChild(li);
   });
 }
@@ -347,7 +296,17 @@ function applyLanguage(lang) {
 
   renderBullets(skillsImprovedList, t.skillsImproved || []);
   renderBullets(skillsHighlightsList, t.skillsHighlights || []);
-  renderProjects(projectsList, t.projects || []);
+
+  // Projetos: listas estáticas no index.html (cv pt.md / cv eng.md); só alterna visibilidade.
+  if (projectsListPt && projectsListEn) {
+    if (lang === 'en') {
+      projectsListPt.hidden = true;
+      projectsListEn.hidden = false;
+    } else {
+      projectsListPt.hidden = false;
+      projectsListEn.hidden = true;
+    }
+  }
 }
 
 const storedLang = localStorage.getItem('lang');
@@ -361,3 +320,52 @@ if (languageSelect) {
     applyLanguage(nextLang);
   });
 }
+
+/* Header: sombra ao rolar */
+const siteHeader = document.getElementById('site-header');
+function updateHeaderScroll() {
+  if (!siteHeader) return;
+  siteHeader.classList.toggle('is-scrolled', window.scrollY > 24);
+}
+window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+updateHeaderScroll();
+
+/* Seções: entrada suave ao entrar na viewport */
+const revealSections = document.querySelectorAll('.section');
+if (revealSections.length && 'IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+  );
+  revealSections.forEach(sec => revealObserver.observe(sec));
+} else {
+  revealSections.forEach(sec => sec.classList.add('is-visible'));
+}
+
+/* Nav: destaque da seção atual */
+const navSpyIds = ['home', 'about', 'experience', 'skills', 'projects', 'education', 'contact'];
+
+function updateActiveNav() {
+  const headerEl = document.getElementById('site-header');
+  const offset = (headerEl ? headerEl.offsetHeight : 0) + 48;
+  const y = window.scrollY + offset;
+  let current = 'home';
+  for (const id of navSpyIds) {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= y) current = id;
+  }
+  document.querySelectorAll('.nav a[href^="#"]').forEach(a => {
+    const href = a.getAttribute('href');
+    a.classList.toggle('is-active', href === `#${current}`);
+  });
+}
+
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+updateActiveNav();
