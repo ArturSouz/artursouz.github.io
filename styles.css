@@ -610,6 +610,11 @@ main {
   margin-top: 0.5rem;
 }
 
+/* [hidden] precisa ganhar do flex acima (senão PT e EN aparecem juntos) */
+#projects .skills-list[hidden] {
+  display: none !important;
+}
+
 .project-item {
   padding: 1.35rem 1.5rem;
   background: var(--surface);

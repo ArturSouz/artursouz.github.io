@@ -106,20 +106,4 @@ Como é um site estático, não há dependências de build.
 Opções:
 
 1. Abrir diretamente `index.html` no navegador.
-2. Rodar um servidor simples (recomendado para evitar limitações de navegador):
 
-```bash
-python3 -m http.server 8000
-```
-
-Depois acesse:
-`http://localhost:8000/artursouz.github.io/`
-
----
-
-## Próximos Ajustes (se você quiser)
-- Incluir um screenshot/preview do site no README.
-- Colocar links externos para portfólio/projetos (quando existirem URLs).
-- Ajustar microtextos (tom/voz) para ficar ainda mais natural em EN.
-
-Se quiser, me diga qual estilo de escrita você prefere (mais direto, mais técnico ou mais “marketing”).
