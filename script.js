@@ -58,28 +58,29 @@ const translations = {
       'Pratico comunicação efetiva e sou bastante proativo na finalização de demandas, além de detectar novas oportunidades de melhoria nos fluxos de produção de valor. Gosto de aprender assuntos técnicos e psicológicos. Sempre que posso, estou lendo, assistindo, praticando e aprimorando meus conhecimentos.',
 
     'experience.heading': 'Experiência',
-    'experience.mid.time': '2022 – Atual',
+    'experience.mid.time': '2022 – atualmente',
     'experience.mid.title': 'Desenvolvedor Pleno',
     'experience.mid.desc':
       'Atuei em diferentes times, onde aprendi a diversificar meus conhecimentos para acompanhar o ambiente de desenvolvimento de uma empresa de grande escala, uma das maiores do segmento no país. Os times utilizavam Kanban, Scrum e auto-gerenciamento. As ferramentas mais utilizadas foram .NET, VB, TypeScript, SQL, TortoiseGit/GitLab, Jira, Visual Studio e Insomnia; também empregamos outras tecnologias, como C#, Python e Notion. Desenvolvi telas e endpoints, além de soluções de integração entre sistemas; atualizei ambientes de testes e de produção, validando builds e deployments; realizei code review de branches, garantindo qualidade e aderência às boas práticas; apresentei e defendi alterações em comitês de mudança; e refatorei código para otimizar performance e ajustar tipagens de variáveis e classes, entregando informações de forma mais clara e eficiente ao front-end.',
 
-    'experience.devops1.time': '2024 – Atual',
-    'experience.devops1.title': 'DevOps Freelancer',
+    'experience.devops1.time': '2024 – 2025',
+    'experience.devops1.title': 'DevOps, Freelancer',
     'experience.devops1.desc':
-      'Desenvolvo, mantenho e administro um sistema para restaurantes, utilizado em um pesque-pague que recebe, em média, 700 pessoas por final de semana. Utilizo Nest.js, Next.js, Flask e Python em um Raspberry Pi 5 local. O sistema oferece cardápio, fluxo de pedidos, fluxo de caixa, quadro Kanban e outras ferramentas. Também auxilio com consultoria em eficiência de processos, desenvolvimento e informatização do estabelecimento.',
+      'Desenvolvimento, monitoramento e administração de um sistema para restaurantes, utilizado em um pesque-pague que recebe, em média, 700 pessoas por final de semana. Utilizando Nest.js, Next.js, Flask e Python em um Raspberry Pi 5 local. O sistema oferece cardápio, fluxo de pedidos, fluxo de caixa, quadro Kanban e outras ferramentas. Também auxiliava com consultoria em eficiência de processos, desenvolvimento e informatização do estabelecimento.',
 
     'experience.devops2.time': '2019 – 2022',
-    'experience.devops2.title': 'DevOps Freelancer',
+    'experience.devops2.title': 'DevOps, Freelancer',
     'experience.devops2.desc':
       'Utilizando plataformas para encontrar projetos, desenvolvi diversos sistemas para pessoas e empresas. Após entender as necessidades dos clientes, delimitamos juntos as funcionalidades e o esforço necessário. Dessa forma, criei soluções do zero, desenhei a estrutura do banco de dados, escrevi o código, realizei testes e efetuei o deploy na AWS. Refatorei a codificação e propus mudanças nos sistemas para melhorar a performance. Todo o processo foi documentado para facilitar a adaptação de novos desenvolvedores após a conclusão do projeto.',
 
     'skills.heading': 'Aptidões',
     'skills.intro':
-      'Consigo utilizar e aprender ferramentas de desenvolvimento com facilidade, incluindo mas não se limitando a novas linguagens, frameworks e ambientes de trabalho. Já utilizei as linguagens: C, C++, C#, VB, Java, Python, PHP, Javascript, SQL, HTML e CSS. Tive contato com outras e não possuo dificuldade em aprender e utilizar.',
+      'Consigo utilizar e aprender ferramentas de desenvolvimento com facilidade, incluindo mas não se limitando a novas Linguagens, Frameworks e Ambientes de trabalho. Já utilizei as linguagens: C, C++, C#, VB, Java, Python, PHP, Javascript, SQL, HTML e CSS. Tive contato com outras e não possuo dificuldade em aprender e utilizar.',
+    'skills.tagline': 'Proatividade e autodidata.',
     'skills.improvedHeading': 'Melhorei as seguintes habilidades',
     'skills.highlightsHeading': 'Destaques',
 
-    'projects.heading': 'Projetos',
+    'projects.heading': 'Projetos — Estudos e Aprendizado',
 
     'education.heading': 'Educação',
     'education.school': 'Universidade Federal Rural do Rio de Janeiro',
@@ -118,10 +119,15 @@ const translations = {
     skillsHighlights: [
       'Planejamento e desenvolvimento de grandes funcionalidades',
       'Refatoração de código legado com redução de 60% a 70% do tempo de execução',
-      'Manter, melhorar, desenvolver novas versões, acompanhar logs e outras atividades da principal API do SuperApp'
+      'Cuidar, melhorar, desenvolver novas versões, acompanhamento de logs, entre outras atividades da principal API do SuperApp'
     ],
 
     projects: [
+      {
+        title: 'Sistema para conectar prestadores de serviço com organizadores de evento (organizeeventos.com)',
+        url: 'https://organizeeventos.com',
+        tech: 'TypeScript, Next.js e Cloudflare'
+      },
       { title: 'Sistema de Assinatura Digital', tech: 'Django, MySQL e AWS' },
       {
         title: 'Sistema de Rota de Compra',
@@ -140,7 +146,7 @@ const translations = {
   en: {
     pageTitle: 'CV | Artur Alves Souza Silva',
     metaDescription:
-      'CV of Artur Alves Souza Silva - Mid-Level Developer and DevOps Freelancer with experience in .NET, TypeScript, SQL, Python, and AWS.',
+      'CV of Artur Alves Souza Silva - Mid-level Software Developer and DevOps Freelancer with experience in .NET, TypeScript, SQL, Python, and AWS.',
 
     'nav.openMenu': 'Open menu',
     'nav.about': 'Profile',
@@ -150,43 +156,44 @@ const translations = {
     'nav.education': 'Education',
     'nav.contact': 'Contact',
 
-    'hero.subtitle': 'Mid-Level Developer & DevOps Freelancer',
+    'hero.subtitle': 'Mid-level Software Developer & DevOps Freelancer',
     'hero.cta': 'Get in Touch',
 
     'about.heading': 'Profile',
     'about.p1':
-      'I have been studying and involved with computing since my teenage years. I am constantly reading and learning new topics. I have participated in programming events and competitions; developed and collaborated in organizing events during my time at university; assisted and taught topics to friends, colleagues, and freshmen; worked on a scientific initiation project and followed the development of other research; and also participated in a one-year exchange program during my undergraduate studies.',
+      'I have studied and been involved with computing since my teenage years. I’m always reading and learning new subjects. I participated in programming events and competitions; developed and helped organize events during my time at university; assisted and taught topics to friends, classmates, and freshmen; worked on a scientific initiation project and followed the development of other research; I also did a one-year exchange program during my undergraduate studies.',
     'about.p2':
-      'I practice effective communication and am highly proactive in completing tasks, as well as identifying new opportunities to improve value delivery processes. I enjoy learning both technical and psychological subjects. Whenever possible, I am reading, watching, practicing, and improving my knowledge.',
+      'I practice effective communication and am highly proactive in completing deliverables, as well as identifying new opportunities to improve value-delivery workflows. I enjoy learning both technical and psychological subjects. Whenever possible, I’m reading, watching, practicing, and sharpening my knowledge.',
 
     'experience.heading': 'Experience',
-    'experience.mid.time': '2022 - Present',
-    'experience.mid.title': 'Mid-Level Developer',
+    'experience.mid.time': '2022–Present',
+    'experience.mid.title': 'Mid-level Software Developer',
     'experience.mid.desc':
-      'I worked in different teams, where I learned to diversify my knowledge to adapt to the development environment of a large-scale company, one of the biggest in its field in the country. The teams used Kanban, Scrum, and self-management. The most used tools were .NET, VB, TypeScript, SQL, TortoiseGit/GitLab, Jira, Visual Studio, and Insomnia; we also employed other technologies, such as C#, Python, and Notion. I developed user interfaces and endpoints, as well as system integration solutions; updated testing and production environments, validating builds and deployments; performed code reviews of branches, ensuring quality and adherence to best practices; presented and defended changes in change management committees; and refactored code to optimize performance and adjust variable and class typings, delivering information more clearly and efficiently to the front end.',
+      'I worked on different teams, where I learned to diversify my skill set to keep up with the development environment of a large-scale company—one of the biggest in its segment in the country. Teams used Kanban, Scrum, and self-management. The main tools were .NET, VB, TypeScript, SQL, TortoiseGit/GitLab, Jira, Visual Studio, and Insomnia; we also used other technologies such as C#, Python, and Notion. I developed UIs and endpoints, as well as integration solutions between systems; updated test and production environments, validating builds and deployments; performed code reviews of branches, ensuring quality and adherence to best practices; presented and defended changes in change committees; and refactored code to optimize performance and adjust variable and class typings, delivering information more clearly and efficiently to the front end.',
 
-    'experience.devops1.time': '2024 - Present',
+    'experience.devops1.time': '2024–2025',
     'experience.devops1.title': 'DevOps, Freelancer',
     'experience.devops1.desc':
-      'I develop, maintain, and administer a system for restaurants, used in a pesque-pague (fishing and leisure business) that receives an average of 700 people per weekend. I use Nest.js, Next.js, Flask, and Python on a local Raspberry Pi 5. The system provides a digital menu, order flow, cash flow, Kanban board, and other tools. I also provide consulting on process efficiency, development, and digitalization of the business.',
+      'Development, monitoring, and administration of a system for restaurants, used at a “pesque-pague” venue that receives an average of 700 people per weekend. Built with Nest.js, Next.js, Flask, and Python on a local Raspberry Pi 5. The system offers a menu, order flow, cash flow, a Kanban board, and other tools. I also provided consulting on process efficiency, development, and digitization of the establishment.',
 
     'experience.devops2.time': '2019 - 2022',
     'experience.devops2.title': 'DevOps, Freelancer',
     'experience.devops2.desc':
-      'Through freelancing platforms, I developed several systems for individuals and companies. After understanding clients’ needs, we jointly defined the features and required effort. I then created solutions from scratch, designed the database structure, wrote the code, carried out testing, and deployed to AWS. I refactored code and proposed system changes to improve performance. The entire process was documented to facilitate the adaptation of new developers after project completion.',
+      'Using platforms to find projects, I developed several systems for people and companies. After understanding client needs, we defined the features and effort together. I created solutions from scratch, designed the database structure, wrote the code, performed tests, and deployed to AWS. I refactored code and proposed system changes to improve performance. The entire process was documented to facilitate onboarding of new developers after project hand-off.',
 
     'skills.heading': 'Skills',
     'skills.intro':
-      'I can easily use and learn development tools, including but not limited to new languages, frameworks, and working environments. Languages I have used: C, C++, C#, VB, Java, Python, PHP, JavaScript, SQL, HTML, and CSS. I have also had contact with other languages and do not find it difficult to learn and work with them.',
+      'I can quickly use and learn development tools, including—but not limited to—new languages, frameworks, and work environments. Languages used: C, C++, C#, VB, Java, Python, PHP, JavaScript, SQL, HTML, and CSS. I’ve had contact with others and have no difficulty learning and using them.',
+    'skills.tagline': 'Proactive and self-taught.',
     'skills.improvedHeading': 'Improved skills',
     'skills.highlightsHeading': 'Highlights',
 
-    'projects.heading': 'Projects',
+    'projects.heading': 'Projects — Study & Learning',
 
     'education.heading': 'Education',
-    'education.school': 'Federal Rural University of Rio de Janeiro',
-    'education.degree': "Bachelor's in Computer Science",
-    'education.period': '2013 - 2018',
+    'education.school': 'Federal Rural University of Rio de Janeiro (UFRRJ)',
+    'education.degree': 'B.Sc. in Computer Science',
+    'education.period': '2013–2018',
     'education.langSchool': 'CCAA',
     'education.langLevel': 'Advanced English',
 
@@ -195,21 +202,21 @@ const translations = {
     'contact.email': 'arturalvessouzasilva@icloud.com',
     'contact.address': 'Rio Doce - MG - 35442-000',
 
-    jsonLdJobTitle: 'Mid-Level Developer and DevOps Freelancer',
+    jsonLdJobTitle: 'Mid-level Software Developer and DevOps Freelancer',
     jsonLdTelephone: '+55 (32) 99851-2325',
     jsonLdEmail: 'arturalvessouzasilva@icloud.com',
 
     skillsImproved: [
       'Software Maintenance',
-      'Integrated Testing',
-      'System Updates',
+      'Integration Testing',
+      'System Upgrades',
       'Production System Support',
       'Code Review',
-      'Stack Switching',
-      'Computer Science Concepts and Design Principles',
+      'Stack Transitions',
+      'Computer Science Concepts & Design Principles',
       'Proposing action plans and solutions before and during development',
-      'Documenting development and testing',
-      'GIT',
+      'Documenting development and tests',
+      'Git',
       'Clear and effective written and verbal communication',
       'Teamwork and collaboration',
       'Problem-solving and out-of-the-box thinking',
@@ -218,24 +225,29 @@ const translations = {
     ],
 
     skillsHighlights: [
-      'Planning and developing major features',
-      'Refactoring legacy code with a 60–70% reduction in execution time',
-      'Maintaining, improving, developing new versions, log monitoring, and other activities of the main SuperApp API'
+      'Planning and development of major features',
+      'Legacy code refactoring with a 60–70% reduction in execution time',
+      'Maintaining, improving, releasing new versions, and monitoring logs—among other activities—of the SuperApp’s main API'
     ],
 
     projects: [
+      {
+        title: 'Platform to connect service providers with event organizers (organizeeventos.com)',
+        url: 'https://organizeeventos.com',
+        tech: 'TypeScript, Next.js, Cloudflare'
+      },
       { title: 'Digital Signature System', tech: 'Django, MySQL, AWS' },
       {
         title: 'Shopping Route System',
-        desc: "Crawler to acquire product prices; system creates a route based on the user's shopping list",
+        desc: 'Web crawler to fetch product prices; builds a route based on the user’s shopping list',
         tech: 'Django, MySQL, AWS'
       },
       {
-        title: 'LLM for X-Ray Classification',
-        desc: 'Classifying between Covid, Pneumonia, and Normal',
+        title: 'X-ray Classification LLM',
+        desc: 'Classifying COVID, Pneumonia, and Normal',
         tech: 'Python, TensorFlow, Scikit-learn, Django, MySQL, AWS'
       },
-      { title: 'Voting System', desc: 'Based on Blockchain', tech: 'Python' }
+      { title: 'Voting System', desc: 'Using Blockchain', tech: 'Python' }
     ]
   }
 };
@@ -261,6 +273,18 @@ function renderProjects(ul, projects) {
     const title = document.createElement('strong');
     title.textContent = p.title;
     li.appendChild(title);
+
+    if (p.url) {
+      const linkWrap = document.createElement('div');
+      linkWrap.className = 'project-link-wrap';
+      const a = document.createElement('a');
+      a.href = p.url;
+      a.textContent = p.url.replace(/^https?:\/\//i, '');
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      linkWrap.appendChild(a);
+      li.appendChild(linkWrap);
+    }
 
     if (p.desc) {
       const desc = document.createElement('div');
